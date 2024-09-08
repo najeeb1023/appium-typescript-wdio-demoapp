@@ -57,7 +57,7 @@ export const config: WebdriverIO.Config = {
         // capabilities for local Appium web tests on an Android Emulator
         "appium:deviceName": 'Pixel 8',
         "appium:automationName": 'UiAutomator2',
-        "platformName": 'Android',
+        "appium:platformName": 'Android',
         "appium:app": join(process.cwd(), './src/apps/Android-MyDemoAppRN.1.3.0.build-244.apk'),
         "appium:appPackage": 'com.saucelabs.mydemoapp.rn',
         "appium:appActivity": '.MainActivity',
@@ -120,7 +120,6 @@ export const config: WebdriverIO.Config = {
     //
     // Make sure you have the wdio adapter package for the specific framework installed
     // before running any tests.
-    framework: 'jasmine',
     
     //
     // The number of times to retry the entire specfile when it fails as a whole
@@ -138,17 +137,7 @@ export const config: WebdriverIO.Config = {
     // reporters: ['dot'],
 
     // Options to be passed to Jasmine.
-    jasmineOpts: {
-        // Jasmine default timeout
-        defaultTimeoutInterval: 60000,
-        //
-        // The Jasmine framework allows interception of each assertion in order to log the state of the application
-        // or website depending on the result. For example, it is pretty handy to take a screenshot every time
-        // an assertion fails.
-        expectationResultHandler: function(passed, assertion) {
-            // do something
-        }
-    },
+   
 
     //
     // =====
